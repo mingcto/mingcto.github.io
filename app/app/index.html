@@ -1,0 +1,23 @@
+<script type="text/javascript">        
+        function downApp(){
+    var u = navigator.userAgent, 
+    isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1,
+    isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+    urls = {
+        'android':'https://ccc.ccc321.cn/app/Android/airuanapp.apk',
+        'ios':'https://apps.apple.com/cn/app/id1311330314',
+        'other':'https://ccc.ccc321.cn/dao'
+    };
+    //三元运算
+    // window.location.href = isAndroid? urls.android : isiOS? urls.ios : urls.other;
+    //简化
+    if(isAndroid){
+        window.location.href=urls.android;
+    }else if(isiOS){
+        window.location.href=urls.ios;
+    }else{
+        window.location.href=urls.other;
+    }
+}
+downApp();
+</script>

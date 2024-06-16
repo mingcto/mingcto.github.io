@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>爱软&怪兽SHOP - 分流页面</title>
+    <style>
+        /* 样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            font-family: "Microsoft YaHei", sans-serif;
+            color: #666;
+            font-size: 16px;
+        }
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f45559;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 999;
+        }
+        .scrollimg {
+            margin: 70px auto 0; /* 调整为70px */
+            width: 90%;
+            padding-top: 20px;
+            position: relative;
+            text-align: center;
+        }
+        .scrollimg img {
+            width: 80%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            animation: shake 0.5s infinite alternate;
+        }
+        @keyframes shake {
+            from {
+                transform: translateX(-2px);
+            }
+            to {
+                transform: translateX(2px);
+            }
+        }
+        .copyBut, .download {
+            width: 80%;
+            margin: 20px auto 0;
+            text-align: center;
+            border-radius: 30px;
+            padding: 15px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f45559;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .copyBut:hover, .download:hover {
+            background-color: #d63b3f;
+        }
+        .copyBut span, .download span {
+            margin-right: 10px;
+        }
+        .qrcode {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qrcode img {
+            width: 150px;
+            height: auto;
+        }
+        .qrcode-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .qrcode-desc {
+            font-size: 14px;
+            color: #999;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f6f6f6;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+        }
+        /* 新增样式 *
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none; /* 初始隐藏 *
+        }
+        .mask img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+        }/* 初始隐藏 */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            display: none;
+            text-align: center;
+            width: 80%; /* 调整弹窗宽度 */
+        }
+        .popup-close {
+            cursor: pointer;
+            color: #999;
+            font-size: 14px;
+            background-color: #f45559;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .popup-content {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">爱软&怪兽SHOP</div> <!-- 新增的顶部栏 -->
+    <!--<div class="mask" id="mask">
+        <img src="weixin.png" alt="请在浏览器中打开">
+    </div>-->
+    <div class="scrollimg">
+        <img src="/app/logo.png" alt="商城Logo">
+    </div>
+
+    <a href="#" class="copyBut" onclick="showPopup('请注意：您即将进入全新的怪兽SHOP平台，新平台与爱软商城数据并不互通，推荐选择手机号登录或者从新注册账号使用，请勿使用爱软商城账号登录怪兽SHOP平台!!!', 'https://m.monshop.cn')">
+        <span>全新</span>
+        <span>怪兽SHOP</span>
+    </a>
+
+    <a href="#" class="copyBut" onclick="showPopup('请注意：您即将进入老的爱软商城，目前已经停止注册，您需要用爱软商城的账号进行登录，我们强烈建议您前往我们全新的怪兽SHOP平台体验更好服务与体验!', 'http://ar.sc9.top')">
+        <span>老的</span>
+        <span>爱软商城</span>
+    </a>
+
+    <div class="qrcode">
+        <div class="qrcode-title">怪兽SHOP公众号</div>
+        <img src="/app/shopnpc.jpg" alt="公众号二维码">
+        <div class="qrcode-desc">请关注官方公众号不迷路</div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content" id="popup-content"></div>
+        <button class="popup-close" id="popup-close" onclick="closePopup()">朕已阅</button>
+    </div>
+
+    <div class="footer">
+        <p>版权所有503v.cn/app &copy; 2016-2024 爱软技术支持</p>
+        <!--<p>备案 <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color: black;">&copy; 淘京科技苏ICP备18026087号-2</a></p>-->
+    </div>
+
+    <script>
+        var popupUrl = '';
+
+        // 检测微信或QQ内打开，显示遮罩
+        /* 初始隐藏 *
+        var ua = window.navigator.userAgent.toLowerCase();
+        var isWeixinOrQQ = ua.match(/MicroMessenger|QQ/i);
+        if (isWeixinOrQQ) {
+            document.getElementById('mask').style.display = 'block';
+        }/* 初始隐藏 */
+
+        function showPopup(content, url) {
+            document.getElementById('popup-content').innerText = content;
+            document.getElementById('popup').style.display = 'block';
+            popupUrl = url;
+            // 复制到剪切板
+            var input = document.createElement('input');
+            input.setAttribute('value', url);
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            window.location.href = popupUrl;
+        }
+    </script>
+</body>
+</html>
