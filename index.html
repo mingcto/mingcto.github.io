@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>怪兽SHOP导航</title>
+<style>
+/* 样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* 黑色背景 */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* 隐藏滚动条 */
+    min-height: 70vh; /* 设置最小高度为视口高度 */
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #66ccff; /* 淡蓝色 */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* 让内容填充剩余空间 */
+}
+
+.typewriter-text {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 20px auto;
+    letter-spacing: .15em;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 15px 30px;
+    background-color: #4d94ff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #1a75ff;
+}
+
+.footer {
+    margin-top: 10px; /* 调整底部间距 */
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    position: absolute; /* 固定在底部 */
+    bottom: 0;
+}
+</style>
+</head>
+<body>
+<div class="header">怪兽SHOP导航</div>
+<div class="container">
+    <img src="zc.png" alt="Placeholder Image" style="margin-bottom: 20px;" />
+    <div class="title">欢迎光临2024共同富裕</div>
+    <div class="typewriter-text" id="randomText"></div>
+    <a href="/app" class="button">点击进入</a>
+</div>
+
+<div class="footer">
+    <p>503V怪兽SHOP版权所有 &copy; 2016-2024 爱软技术支持</p>
+    <!--<p>备案 <a href="https://beian.miit.gov.cn/#/Integrated/index" style="color: white;">&copy; 淘京科技苏ICP备18026087号-2</a></p>-->
+</div>
+
+
+<script>
+// 新的随机话术数组
+var phrases = [
+    '欢迎咨询怪兽SHOP客服',
+    '售后问题别急都会处理好',
+    '怪兽SHOP竭诚为您服务',
+    '科技改变生活服务更暖心',
+];
+
+// 文字逐句显示动画
+var phraseIndex = 0;
+var charIndex = 0;
+var speed = 100; // 文字显示速度
+
+function typeWriter() {
+    if (charIndex < phrases[phraseIndex].length) {
+        document.getElementById('randomText').innerHTML += phrases[phraseIndex].charAt(charIndex);
+        charIndex++;
+    } else {
+        charIndex = 0;
+        phraseIndex = (phraseIndex + 1) % phrases.length; // 循环选择话术
+        document.getElementById('randomText').innerHTML = ''; // 清空文本框
+    }
+    
+    setTimeout(typeWriter, speed);
+}
+typeWriter();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<script type="text/javascript">  
+    var userAgent = navigator.userAgent.toLowerCase();     
+    var platform;     
+    if(userAgent == null || userAgent == '')
+    { 
+  platform = 'WEB'; location.href = "/app/";
+     }else{ 
+  if(userAgent.indexOf("android") != -1 )
+     { 
+    platform = 'ANDROID';
+    location.href = "/app/"; 
+      }else if(userAgent.indexOf("ios") != -1 || userAgent.indexOf("iphone") 
+
+!= -1 || userAgent.indexOf("ipad") != -1)
+  { 
+    platform = 'IOS';
+    location.href = "/app/";
+   }else if(userAgent.indexOf("windows phone") != -1 )
+       {
+    platform = 'WP';
+    location.href = "/app/";
+        } 
+     } 
+</script>
+<html>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> 天启个人主页 | 博客</title>
+
+	<link rel="icon" href="favicon.ico" type="image/png">
+
+	<link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="home/css/reset.css">
+	<link rel="stylesheet" href="home/css/styles.css">
+	<link rel="stylesheet" href="home/css/themes/white-indigo.css">
+	<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"Jhaa9iMQZDUo6hls",ck:"Jhaa9iMQZDUo6hls",autoTrack:true,hashMode:true})</script>
+</head>
+<body>
+	<main>
+	    <center><img src="home/img.png" style="width: 6rem; border-radius: 50%;"></center>
+		<div class="intro">天启个人主页|博客</div>
+		<div class="tagline">|记录余生的美好|</div>
+		<div class="tagline">热情|洒脱|温柔|冷漠</div>
+		
+		<div class="tagline" style="color: #EA5455;" >天启个人主页博客</div>
+		<div class="icons-social">
+			<a target="_blank" href="/app/"> <center><img src="home/img.png" style="width: 6rem; border-radius: 30%;"></center></i></a>
+
+		</div>
+		<div class="footer" style="color: #000DFF;" >
+			<a target="_blank" href="http://beian.miit.gov.cn/">
+备案：ICP正在备案中</a>
+		</div>
+	</main>
+</body></html>
+
+
+<script type="text/javascript">  
+    var userAgent = navigator.userAgent.toLowerCase();     
+    var platform;     
+    if(userAgent == null || userAgent == '')
+    { 
+  platform = 'WEB'; location.href = "/app/";
+     }else{ 
+  if(userAgent.indexOf("android") != -1 )
+     { 
+    platform = 'ANDROID';
+    location.href = "/app/"; 
+      }else if(userAgent.indexOf("ios") != -1 || userAgent.indexOf("iphone") 
+
+!= -1 || userAgent.indexOf("ipad") != -1)
+  { 
+    platform = 'IOS';
+    location.href = "/app/";
+   }else if(userAgent.indexOf("windows phone") != -1 )
+       {
+    platform = 'WP';
+    location.href = "/app/";
+        } 
+     } 
+</script>
+<html>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> 怪兽主页 | 导航</title>
+
+	<link rel="icon" href="favicon.ico" type="image/png">
+
+	<link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="home/css/reset.css">
+	<link rel="stylesheet" href="home/css/styles.css">
+	<link rel="stylesheet" href="home/css/themes/white-indigo.css">
+	<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"Jhaa9iMQZDUo6hls",ck:"Jhaa9iMQZDUo6hls",autoTrack:true,hashMode:true})</script>
+</head>
+<body>
+	<main>
+	    <center><img src="home/img.png" style="width: 6rem; border-radius: 50%;"></center>
+		<div class="intro">怪兽主页|导航</div>
+		<div class="tagline">|一秒记住【 503v.cn 】永久地址|</div>
+		<div class="tagline">微商软件|权益会员|红包封面|知识付费</div>
+		
+		<div class="tagline" style="color: #EA5455;" >点击下边↓↓↓↓↓↓进入站点</div>
+		<div class="icons-social">
+			<a target="_blank" href="/app/"> <center><img src="home/img.png" style="width: 6rem; border-radius: 30%;"></center></i></a>
+
+		</div>
+		<div class="footer" style="color: #000DFF;" >
+			<a target="_blank" href="http://beian.miit.gov.cn/">
+电脑用户进入请点击上边图标进入系统</a>
+		</div>
+	</main>
+
+
+</body></html>-->
