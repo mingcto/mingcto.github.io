@@ -10,7 +10,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 100;
+    z-index: 1000; /* 确保按钮在页面最上层 */
 }
 
 .social-button {
@@ -54,7 +54,7 @@
     background-image: url('mingweb3.0.png');
     background-size: cover;
     background-position: center;
-    z-index: 1000;
+    z-index: 999; /* 确保海图背景不会遮挡按钮 */
     opacity: 1;
     transition: opacity 3s ease-in-out;
 }
