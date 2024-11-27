@@ -6,16 +6,19 @@ window.onload = () => {
         document.getElementById('main-content').style.opacity = 1;
     }, 3000);
 
-    // 为按钮添加点击事件
+    // 为按钮添加点击事件，直接访问链接
     document.getElementById('tg-btn').addEventListener('click', () => {
-        window.open('https://t.me/+6OHBlZS3Lpo4OGVl',); // 替换为 Telegram 链接
+        console.log("TG按钮被点击");
+        window.location.href = 'https://www.baidu.com'; // 替换为 Telegram 链接
     });
 
     document.getElementById('twitter-btn').addEventListener('click', () => {
-        window.open('https://t.me/+6OHBlZS3Lpo4OGVl'); // 替换为 Twitter 链接
+        console.log("推特按钮被点击");
+        window.location.href = 'https://www.baidu.com'; // 替换为 Twitter 链接
     });
 
     document.getElementById('dex-btn').addEventListener('click', () => {
-        window.open('https://t.me/+6OHBlZS3Lpo4OGVl'); // 替换为 DEX 链接
+        console.log("DEX按钮被点击");
+        window.location.href = 'https://www.baidu.com'; // 替换为 DEX 链接
     });
 };
