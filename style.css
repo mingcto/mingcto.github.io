@@ -20,11 +20,6 @@
     background-color: #555;
 }
 
-/* 隐藏内容的类 */
-.hidden {
-    display: none;
-}
-
 /* 页面主体样式 */
 #main-content {
     padding: 20px;
