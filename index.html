@@ -9,54 +9,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- 海图背景 (3秒过渡) -->
-    <div id="sea-map" class="sea-map">
+    <!-- 中英文切换按钮 -->
+    <div class="language-toggle">
+        <button id="language-toggle-btn">EN</button>
+    </div>
+
+    <!-- 海图背景 -->
+    <div class="sea-map" id="sea-map">
         <div class="sea-content">
-            <h1>欢迎进入冥界</h1>
-            <p>即将进入MING币的虚拟世界...</p>
+            <h1 data-en="Welcome to MING Coin" data-zh="欢迎来到MING币">Welcome to MING Coin</h1>
+            <p data-en="A meme token inspired by the Chinese culture of funerary items" data-zh="一个灵感来自中国殡葬文化的模因代币">
+                A meme token inspired by the Chinese culture of funerary items
+            </p>
         </div>
     </div>
 
-    <!-- 正式页面内容 -->
+    <!-- 页面内容 -->
     <div id="main-content" class="hidden">
-        <header>
-            <div class="banner">
-                <img src="banner-image.jpg" alt="MING币" class="banner-image">
-            </div>
-            <div class="title">
-                <h1>MING币——跨越生死的代币</h1>
-                <p>虚拟货币的冥界传承</p>
-            </div>
-        </header>
-
-        <section id="about" class="about">
-            <h2>关于MING币</h2>
-            <p>
-                MING币，灵感来自中国传统的冥币文化，致力于揭示虚拟货币市场的割韭菜现象。
-                我们的目标是通过MING币将冥界与虚拟货币世界连接起来，让所有“割韭菜”的投机者迎接他们的最终命运。
+        <div class="title">
+            <h1 data-en="MING Coin - The Meme Token" data-zh="MING币 - 模因代币">MING Coin - The Meme Token</h1>
+            <p data-en="MING Coin is inspired by the Chinese tradition of funeral goods, creating a unique meme token experience." 
+               data-zh="MING币灵感来自中国的殡葬用品传统，创造了一种独特的模因代币体验。">
+                MING Coin is inspired by the Chinese tradition of funeral goods, creating a unique meme token experience.
             </p>
-        </section>
+        </div>
 
-        <section id="memecoin" class="memecoin">
-            <h2>MEME代币叙事</h2>
-            <p>
-                MING币不仅仅是数字货币，它背后有强大的文化和故事支撑。通过MEME代币的形式，我们创造出虚拟世界与冥界的结合点，带有强烈的讽刺色彩。
-            </p>
-        </section>
-
-        <section id="roadmap" class="roadmap">
-            <h2>路线图</h2>
+        <div class="roadmap">
+            <h2 data-en="Roadmap" data-zh="路线图">Roadmap</h2>
             <ul>
-                <li>第一阶段：MING币初版发行，开始NFT系列冥界物品开发。</li>
-                <li>第二阶段：上线多个交易平台，发布冥界NFT产品。</li>
-                <li>第三阶段：推出地府链，发布更多冥界虚拟物品。</li>
-                <li>第四阶段：全球推广，建立基于MING币的虚拟世界经济系统。</li>
+                <li data-en="Launch MING Coin and initial liquidity pool" data-zh="发行MING币并创建初始流动池">Launch MING Coin and initial liquidity pool</li>
+                <li data-en="Introduce NFT-based funeral items" data-zh="推出基于NFT的殡葬用品">Introduce NFT-based funeral items</li>
+                <li data-en="Expand token utilities and partnerships" data-zh="扩展代币的用途和合作关系">Expand token utilities and partnerships</li>
             </ul>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 MING币 - 跨越生死，走向冥界</p>
-        </footer>
+        </div>
     </div>
 </body>
 </html>
+
