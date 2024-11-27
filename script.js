@@ -26,16 +26,3 @@ window.onload = () => {
         });
     });
 
-    // 初始显示英文内容
-    languageToggleBtn.textContent = 'EN';
-
-    // 默认显示首页内容，隐藏其他部分
-    const mainContent = document.getElementById('main-content');
-    const seaMap = document.getElementById('sea-map');
-    
-    // 设置一个延时，让首页内容加载后再显示主内容
-    setTimeout(() => {
-        seaMap.style.opacity = '0';  // 渐变消失
-        mainContent.classList.remove('hidden');  // 显示主内容
-    }, 3000);  // 海图背景消失时间为3秒
-};
