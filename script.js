@@ -8,14 +8,14 @@ window.onload = () => {
 
     // 为按钮添加点击事件
     document.getElementById('tg-btn').addEventListener('click', () => {
-        window.open('https://www.baidu.com', '_blank'); // 替换为 Telegram 链接
+        window.open('https://t.me/+6OHBlZS3Lpo4OGVl',); // 替换为 Telegram 链接
     });
 
     document.getElementById('twitter-btn').addEventListener('click', () => {
-        window.open('https://www.baidu.com', '_blank'); // 替换为 Twitter 链接
+        window.open('https://t.me/+6OHBlZS3Lpo4OGVl'); // 替换为 Twitter 链接
     });
 
     document.getElementById('dex-btn').addEventListener('click', () => {
-        window.open('https://www.baidu.com', '_blank'); // 替换为 DEX 链接
+        window.open('https://t.me/+6OHBlZS3Lpo4OGVl'); // 替换为 DEX 链接
     });
 };
