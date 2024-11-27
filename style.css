@@ -49,16 +49,16 @@ body {
 /* 背景切换的CSS动画 */
 @keyframes changeBackground {
     0% {
-        background-image: url('underworld1.jpg');
+        background-image: url('mingweb3.0.png');
     }
     33% {
-        background-image: url('underworld2.jpg');
+        background-image: url('mingweb3.0.png');
     }
     66% {
-        background-image: url('underworld3.jpg');
+        background-image: url('mingweb3.0.png');
     }
     100% {
-        background-image: url('underworld1.jpg');
+        background-image: url('mingweb3.0.png');
     }
 }
 
