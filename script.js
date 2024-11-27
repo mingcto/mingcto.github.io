@@ -1,21 +1,3 @@
-// 处理海图显示和过渡
-window.onload = () => {
-    const backgroundImages = [
-        'underworld1.jpg',
-        'underworld2.jpg',
-        'underworld3.jpg'
-    ];
-
-    // 随机选择一个背景图
-    const randomIndex = Math.floor(Math.random() * backgroundImages.length);
-    document.querySelector('.sea-map').style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
-
-    // 3秒后切换内容
-    setTimeout(() => {
-        document.getElementById('sea-map').style.opacity = 0;  // 隐藏海图
-        document.getElementById('main-content').classList.remove('hidden'); // 显示主内容
-    }, 3000);  // 延时3秒后过渡
-};
 // 页面加载后执行
 window.onload = () => {
     // 默认显示英文内容
@@ -45,5 +27,15 @@ window.onload = () => {
     });
 
     // 初始显示英文内容
-    languageToggleBtn.textContent = 'CN';
+    languageToggleBtn.textContent = 'EN';
+
+    // 默认显示首页内容，隐藏其他部分
+    const mainContent = document.getElementById('main-content');
+    const seaMap = document.getElementById('sea-map');
+    
+    // 设置一个延时，让首页内容加载后再显示主内容
+    setTimeout(() => {
+        seaMap.style.opacity = '0';  // 渐变消失
+        mainContent.classList.remove('hidden');  // 显示主内容
+    }, 3000);  // 海图背景消失时间为3秒
 };
