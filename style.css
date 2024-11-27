@@ -62,8 +62,12 @@
 .sea-map .sea-content {
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* 页面标题样式 */
