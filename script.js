@@ -7,16 +7,18 @@ window.onload = () => {
     }, 3000);
 
     // 为按钮添加点击事件，直接访问链接
-// JavaScript (script.js)
-document.getElementById('tg-button').onclick = function() {
-    window.location.href = 'https://www.baidu.com'; // TG 链接
-};
+    document.getElementById('tg-btn').addEventListener('click', () => {
+        console.log("TG按钮被点击");
+        window.location.href = 'https://www.baidu.com'; // 替换为 Telegram 链接
+    });
 
-document.getElementById('twitter-button').onclick = function() {
-    window.location.href = 'https://www.baidu.com'; // Twitter 链接
-};
+    document.getElementById('twitter-btn').addEventListener('click', () => {
+        console.log("推特按钮被点击");
+        window.location.href = 'https://www.baidu.com'; // 替换为 Twitter 链接
+    });
 
-document.getElementById('dex-button').onclick = function() {
-    window.location.href = 'https://www.baidu.com'; // DEX 链接
+    document.getElementById('dex-btn').addEventListener('click', () => {
+        console.log("DEX按钮被点击");
+        window.location.href = 'https://www.baidu.com'; // 替换为 DEX 链接
+    });
 };
-
