@@ -1,22 +1,25 @@
-/* 右上角语言切换按钮样式 */
-.language-toggle {
+/* 右上角社交按钮样式 */
+.social-buttons {
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 100;
 }
 
-.language-toggle button {
+.social-button {
     padding: 10px;
     background-color: #333;
     color: #fff;
+    text-decoration: none;
     border: none;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
 }
 
-.language-toggle button:hover {
+.social-button:hover {
     background-color: #555;
 }
 
@@ -35,6 +38,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: url('mingweb3.0.png');
     background-size: cover;
     background-position: center;
     z-index: 1000;
