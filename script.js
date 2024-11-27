@@ -45,5 +45,5 @@ window.onload = () => {
     });
 
     // 初始显示英文内容
-    languageToggleBtn.textContent = 'EN';
+    languageToggleBtn.textContent = 'CN';
 };
