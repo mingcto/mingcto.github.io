@@ -5,7 +5,7 @@ window.onload = () => {
         document.querySelectorAll('.hidden').forEach(element => {
             element.classList.remove('hidden');
         });
-    }, 1500);
+    }, 2000);
 
     // 粒子特效初始化
     createParticles();
