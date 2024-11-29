@@ -1,119 +1,179 @@
-/* 基本重置 */
+/* 重置样式 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 右上角社交按钮样式 */
-.social-buttons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000; /* 确保按钮在页面最上层 */
-}
-
-.social-button {
-    display: inline-block;
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 16px;
-    border: 2px solid #555;
-    border-radius: 5px;
-    margin-left: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.social-button i {
-    margin-right: 8px;
-}
-
-.social-button:hover {
-    background-color: #333;
-    transform: scale(1.1);
-}
-
-/* 页面主体样式 */
-#main-content {
-    padding: 40px;
-    color: #fff;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    font-family: Arial, sans-serif;
-}
-
-/* 海图背景的样式 */
-.sea-map {
+/* 启动图样式 */
+#startup-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('mingweb3.0.png');
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.startup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保证图片始终覆盖屏幕 */
+    max-width: none;  /* 防止最大宽度限制 */
+    max-height: none; /* 防止最大高度限制 */
+}
+
+
+/* 隐藏类 */
+.hidden {
+    display: none;
+}
+
+/* 背景样式 */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bj.gif'); /* 替换为背景GIF */
     background-size: cover;
     background-position: center;
-    z-index: 999; /* 确保海图背景不会遮挡按钮 */
-    opacity: 1;
-    transition: opacity 3s ease-in-out;
+    z-index: -1;
 }
 
-.sea-map .sea-content {
+/* 主内容样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: #000;
+    overflow-x: hidden;
+}
+
+/* 粒子特效样式 */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 顶部导航 */
+.top-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-button {
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    background: linear-gradient(145deg, #222, #111);
+    box-shadow: 3px 3px 5px #000, -3px -3px 5px #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 10px #000, -5px -5px 10px #444;
+}
+
+/* 横幅样式 */
+.banner {
     text-align: center;
-    color: white;
+    margin: 20px 0;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* 介绍部分 */
+.about, .roadmap {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    margin: 10px 20px;
+    border-radius: 10px;
+}
+
+h2 {
     font-size: 24px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-bottom: 15px;
 }
 
-/* 页面标题样式 */
-.title h1 {
-    text-align: center;
-    font-size: 36px;
-    color: #ddd;
-    margin-bottom: 10px;
+p, li {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-.title p {
-    text-align: center;
-    font-size: 20px;
-    color: #999;
-}
-
-/* 介绍部分样式 */
-.about, .memecoin, .roadmap {
-    margin: 30px 0;
-    font-size: 18px;
-}
-
-/* 路线图样式 */
-.roadmap h2, .memecoin h2, .about h2 {
-    font-size: 28px;
-    color: #f5f5f5;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
+/* 路线图 */
 .roadmap ul {
     list-style: none;
-    padding-left: 0;
-    font-size: 18px;
+    padding: 0;
 }
 
 .roadmap li {
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
-/* 页脚样式 */
+/* 页脚 */
 footer {
     text-align: center;
+    margin: 20px;
     font-size: 14px;
-    color: #999;
-    margin-top: 40px;
+    color: #aaa;
+}
+.social-buttons {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* 居中对齐 */
+    display: flex;
+    gap: 15px; /* 按钮之间的间距 */
+    z-index: 1000; /* 确保按钮位于最上层 */
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px; /* 圆角按钮 */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-button i {
+    margin-right: 8px; /* 图标和文字之间的间距 */
+    font-size: 18px; /* 图标大小 */
+}
+
+.social-button:hover {
+    background-color: #333; /* 悬停时背景色变化 */
+    transform: scale(1.1); /* 按钮稍微放大 */
+}
+/* 顶部横幅样式 */
+.header {
+    margin-top: 100px; /* 调整顶部与页面的距离，可以增加或减少数值 */
 }
 
 /* 横幅图像样式 */
@@ -123,14 +183,195 @@ footer {
     display: block;
     margin: 0 auto;
 }
-
-/* 优化页面背景 */
-body {
-    background-color: #121212;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
+/* 页脚样式 */
+footer {
+    background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+    padding: 40px 20px; /* 内边距，增加顶部和底部的间距 */
+    text-align: center; /* 文字居中对齐 */
+    color: #fff; /* 白色文字 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* 加入阴影效果 */
+    backdrop-filter: blur(10px); /* 背景模糊效果 */
 }
 
-.hidden {
-    display: none;
+/* 居中内容容器 */
+.footer-content {
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
+    display: flex;
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center;
+    flex-wrap: wrap; /* 在小屏设备上换行 */
+}
+
+/* 白皮书链接样式 */
+.whitepaper {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 10px; /* 白皮书和交易平台之间的间距 */
+}
+
+.footer-link {
+    color: #fff; /* 白色链接文字 */
+    text-decoration: none; /* 去掉下划线 */
+    font-size: 18px; /* 设置字体大小 */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* 增加过渡效果 */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 增加文字阴影 */
+}
+
+.footer-link:hover {
+    color: #f39c12; /* 悬停时链接的颜色变为金色 */
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7); /* 悬停时增加亮白色阴影 */
+}
+
+/* 交易平台图标部分的布局 */
+.exchanges {
+    display: flex;
+    justify-content: space-around;
+    width: 60%; /* 交易平台图标宽度占60% */
+    margin-top: 10px;
+}
+
+.footer-icon {
+    font-size: 30px; /* 图标大小 */
+    color: #fff; /* 白色图标 */
+    margin: 0 15px; /* 图标之间的间距 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 增加过渡效果 */
+}
+
+.footer-icon:hover {
+    color: #f39c12; /* 悬停时图标颜色变为金色 */
+    transform: scale(1.2); /* 悬停时放大图标 */
+}
+/* 页脚样式 */
+footer {
+    background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+    padding: 40px 20px; /* 内边距，增加顶部和底部的间距 */
+    text-align: center; /* 文字居中对齐 */
+    color: #fff; /* 白色文字 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* 加入阴影效果 */
+    backdrop-filter: blur(10px); /* 背景模糊效果 */
+}
+
+/* 居中内容容器 */
+.footer-content {
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
+    display: flex;
+    flex-direction: column; /* 竖向排列 */
+    align-items: center; /* 让内容居中对齐 */
+    justify-content: center;
+}
+
+/* 白皮书链接样式 */
+.whitepaper {
+    margin-bottom: 20px; /* 白皮书和Solana图标之间的间距 */
+}
+
+.footer-link {
+    color: #fff; /* 白色链接文字 */
+    text-decoration: none; /* 去掉下划线 */
+    font-size: 18px; /* 设置字体大小 */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* 增加过渡效果 */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 增加文字阴影 */
+}
+
+.footer-link:hover {
+    color: #f39c12; /* 悬停时链接的颜色变为金色 */
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7); /* 悬停时增加亮白色阴影 */
+}
+
+/* Solana图标部分的布局 */
+.solana {
+    margin-top: 20px; /* Solana图标与其他内容之间的间距 */
+}
+
+/* 图标样式 */
+.footer-icon {
+    margin: 0 15px; /* 图标之间的间距 */
+    transition: transform 0.3s ease; /* 增加放大效果 */
+}
+
+/* Solana图标样式 */
+.fab.fa-solanar {
+    font-size: 40px; /* 设置Solana图标的大小 */
+    color: #fff; /* 图标颜色 */
+    transition: transform 0.3s ease; /* 增加放大效果 */
+}
+
+.fab.fa-solanar:hover {
+    transform: scale(1.2); /* 悬停时放大图标 */
+    color: #f39c12; /* 悬停时图标变为金色 */
+}
+
+/* Solana图标部分的样式 */
+.fas.fa-circle {
+    font-size: 40px; /* 设置图标大小 */
+    color: #00f7c1; /* Solana 颜色 */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fas.fa-circle:hover {
+    transform: scale(1.2); /* 鼠标悬停时放大图标 */
+    color: #f39c12; /* 悬停时颜色变为金色 */
+}
+
+/* 页面样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #f39c12;
+}
+
+/* 内容区域样式 */
+.content {
+    padding: 40px;
+    margin-top: 20px;
+}
+
+h1, h2 {
+    color: #f39c12;
+}
+
+p, ul {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: white;
 }
