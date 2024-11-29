@@ -1,18 +1,11 @@
 window.onload = () => {
-    // 检查语言是否为英文
-    if (document.body.lang === "en") {
-        // 如果是英文版，跳过启动图，直接显示主内容
-        document.getElementById('startup-screen').style.display = 'none'; // 隐藏启动图
-        document.getElementById('main-content').classList.remove('hidden'); // 显示主内容
-    } else {
-        // 如果是其他语言（默认是中文），显示启动图
-        setTimeout(() => {
-            document.getElementById('startup-screen').style.display = 'none'; // 隐藏启动图
-            document.getElementById('main-content').classList.remove('hidden'); // 显示主内容
-        }, 2000);  // 启动图显示 5 秒
-    }
-};
-
+    // 启动图显示5秒后移除
+    setTimeout(() => {
+        document.getElementById('startup-screen').style.display = 'none';
+        document.querySelectorAll('.hidden').forEach(element => {
+            element.classList.remove('hidden');
+        });
+    }, 1500);
 
     // 粒子特效初始化
     createParticles();
