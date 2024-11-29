@@ -1,24 +1,73 @@
 window.onload = () => {
-    // 延时隐藏海图并显示主内容
-    setTimeout(() => {
-        document.getElementById('sea-map').style.opacity = 0;
-        document.getElementById('main-content').classList.remove('hidden');
-        document.getElementById('main-content').style.opacity = 1;
-    }, 3000);
-
-    // 为按钮添加点击事件，直接访问链接
-    document.getElementById('tg-btn').addEventListener('click', () => {
-        console.log("TG按钮被点击");
-        window.location.href = 'https://t.co/zyYsMnlXPM'; // 替换为 Telegram 链接
-    });
-
-    document.getElementById('twitter-btn').addEventListener('click', () => {
-        console.log("推特按钮被点击");
-        window.location.href = 'https://x.com/MINGToken'; // 替换为 Twitter 链接
-    });
-
-    document.getElementById('dex-btn').addEventListener('click', () => {
-        console.log("DEX按钮被点击");
-        window.location.href = 'https://pump.fun/coin/4JvuLhSDs2soJUEd6bzpWsC43zCUqJBj65aQ3vu6pump'; // 替换为 DEX 链接
-    });
+    // 检查语言是否为英文
+    if (document.body.lang === "en") {
+        // 如果是英文版，跳过启动图，直接显示主内容
+        document.getElementById('startup-screen').style.display = 'none'; // 隐藏启动图
+        document.getElementById('main-content').classList.remove('hidden'); // 显示主内容
+    } else {
+        // 如果是其他语言（默认是中文），显示启动图
+        setTimeout(() => {
+            document.getElementById('startup-screen').style.display = 'none'; // 隐藏启动图
+            document.getElementById('main-content').classList.remove('hidden'); // 显示主内容
+        }, 2000);  // 启动图显示 5 秒
+    }
 };
+
+
+    // 粒子特效初始化
+    createParticles();
+};
+
+// 火焰粒子特效
+function createParticles() {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function createParticle() {
+        const x = Math.random() * canvas.width;
+        const y = canvas.height + Math.random() * 100;
+        const size = Math.random() * 3 + 1;
+        const speed = Math.random() * 1.5 + 0.5;
+        const opacity = Math.random() * 0.5 + 0.5;
+        return { x, y, size, speed, opacity };
+    }
+
+    function updateParticles() {
+        particles.forEach(p => {
+            p.y -= p.speed;
+            p.opacity -= 0.005;
+            if (p.y < -10 || p.opacity <= 0) {
+                Object.assign(p, createParticle());
+            }
+        });
+    }
+
+    function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(255, 69, 0, 0.8)';
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 69, 0, ${p.opacity})`;
+            ctx.fill();
+        });
+    }
+
+    function animate() {
+        updateParticles();
+        drawParticles();
+        requestAnimationFrame(animate);
+    }
+
+    // 初始化粒子
+    for (let i = 0; i < 100; i++) {
+        particles.push(createParticle());
+    }
+
+    animate();
+}
+
