@@ -1,77 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MING币官网</title>
+    <title>MING币 - 冥界代币</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <!-- 引入 Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- 右上角社交按钮 -->
-    <div class="social-buttons">
-        <a href="https://t.co/zyYsMnlXPM" target="_blank">
-            <button class="social-button"><i class="fab fa-telegram-plane"></i> TG</button>
-        </a>
-        <a href="https://x.com/MINGToken" target="_blank">
-            <button class="social-button"><i class="fab fa-twitter"></i> X </button>
-        </a>
-        <a href="https://pump.fun/coin/4JvuLhSDs2soJUEd6bzpWsC43zCUqJBj65aQ3vu6pump" target="_blank">
-            <button class="social-button"><i class="fas fa-chart-line"></i> DEX</button>
-        </a>
+    <!-- 启动图 -->
+    <div id="startup-screen">
+        <img src="startup-image.gif" alt="启动图" class="startup-image">
     </div>
 
-    <!-- 海图背景 (3秒过渡) -->
-    <div id="sea-map" class="sea-map">
-        <div class="sea-content">
-            <h1>欢迎进入冥界Web3.0</h1>
-            <p>即将进入MING币的虚拟世界...</p>
-        </div>
-    </div>
+    <!-- 背景 -->
+    <div id="background"></div>
 
-    <!-- 正式页面内容 -->
+    <!-- 粒子特效容器 -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- 主页面内容 -->
     <div id="main-content" class="hidden">
-        <header>
-            <div class="banner">
-                <img src="mingweb3.0.png" alt="MING币" class="banner-image">
-            </div>
-            <div class="title">
-                <h1>MING币——冥界Web3.0</h1>
-                <p>虚拟货币的冥界传承</p>
+        <!-- 顶部按钮导航 -->
+       <div class="social-buttons">
+    <a href="https://t.co/zyYsMnlXPM" target="_blank">
+        <button class="social-button">
+            <i class="fab fa-telegram-plane"></i> TG
+        </button>
+    </a>
+    <a href="https://x.com/MINGToken" target="_blank">
+        <button class="social-button">
+            <i class="fab fa-twitter"></i> X
+        </button>
+    </a>
+    <a href="https://pump.fun/coin/4JvuLhSDs2soJUEd6bzpWsC43zCUqJBj65aQ3vu6pump" target="_blank">
+        <button class="social-button">
+            <i class="fas fa-chart-line"></i> DEX
+        </button>
+    </a>
+    <a href="en.html" onclick="switchLanguage('en')">
+        <button class="social-button">
+            <i class="fas fa-language"></i> EN
+        </button>
+    </a>
+</div>
+
+
+
+        <!-- 横幅图 -->
+        <header class="header">
+    <div class="banner">
+                <img src="hengfu.gif" alt="MING币横幅" class="banner-image">
             </div>
         </header>
 
-        <section id="about" class="about">
-            <h2>关于MING币</h2>
-            <p>
-                MING币，灵感来自中国传统的冥币文化，致力于揭示虚拟货币市场的割韭菜现象。
-                我们的目标是通过MING币将冥界与虚拟货币世界连接起来，让所有“割韭菜”的投机者迎接他们的最终命运。
-            </p>
+        <!-- 代币介绍 -->
+        <section class="about">
+            <h2>关于 MING币</h2>
+            <p>MING币，灵感来源于中国传统的冥币文化，致力于揭示虚拟货币市场的割韭菜现象。通过创新设计和代币经济学，我们希望为虚拟货币市场带来新思考。</p>
         </section>
+        
+            <!-- 项目介绍部分 -->
+    <section class="about">
+        <h2>幽冥摆渡人</h2>
+        <p>
+            在冥冥之中，命运的召唤无法忽视。阎王爷三次托梦，嘱托使命：在人间发展基于Web3技术的数字冥币 $MING，为未来地府移动支付奠定基础。
+        </p>
+             
+        <p>
+            我们的目标是通过 MING币 将冥界与虚拟货币世界连接起来，让所有“割韭菜”的投机者迎接他们的最终命运。 MING币不仅仅是数字货币，它背后有强大的文化和故事支撑。通过数字化代币的形式，我们创造出虚拟世界与冥界的结合点，带有强烈的讽刺色彩。又能为逝者祭奠燃烧代币获取NFT卡片！
+        </p>
+    </section>
 
-        <section id="memecoin" class="memecoin">
-            <h2>MING代币叙事</h2>
-            <p>我们买的是去中心化消费品，是用来燃烧的不是用来暴富的，如果你因此暴富了，大概是你燃烧$MING币得祖先保佑.
-                MING币不仅仅是数字货币，它背后有强大的文化和故事支撑。通过数字化代币的形式，我们创造出虚拟世界与冥界的结合点，即有强烈的讽刺色彩。又能为逝者祭奠燃烧代币获取NFT卡片!
-            </p>
-        </section>
+    <!-- 发展路线图 -->
+    <section class="roadmap">
+        <h2>发展路线图</h2>
+        <ul>
+            <li><strong>第一阶段：</strong> MING币初版发行，开始空投和燃烧计划。</li>
+            <li><strong>第二阶段：</strong> 发布冥界NFT产品，NFT系列冥界物品开发。</li>
+            <li><strong>第三阶段：</strong> 推出地府链，发布更多冥界虚拟物品NFT。</li>
+            <li><strong>第四阶段：</strong> 全球推广，建立基于MING币的虚拟世界经济系统。</li>
+        </ul>
+    </section>
+        
+        <!-- 页脚 -->
+<footer>
+    <div class="footer-content">
+        <!-- 白皮书链接 -->
+        <div class="whitepaper">
+            <a href="bps.html" target="_blank" class="footer-link">白皮书</a>
+        </div>
+        
+<!-- Solana图标 -->
+<div class="solana">
+    <a href="bps.html" target="_blank" class="footer-icon">
+        <i class="fas fa-book"></i> <!-- 使用圆形图标作为Solana图标 -->
+    </a>
+</div>
 
-        <section id="roadmap" class="roadmap">
-            <h2>路线图</h2>
-            <ul>
-                <li>第一阶段：MING币初版发行，开始空投和燃烧计划。</li>
-                <li>第二阶段：发布冥界NFT产品,NFT系列冥界物品开发。</li>
-                <li>第三阶段：推出地府链，发布更多冥界虚拟物品。</li>
-                <li>第四阶段：全球推广，建立基于MING币的虚拟世界经济系统。</li>
-            </ul>
-        </section>
+</footer>
 
+
+        <!-- 页脚 -->
         <footer>
-            <p>&copy; 2024 MING币 - 跨越生死，摆渡币圈</p>
+            <p>&copy; 2024 MING币 - 冥界Web3.0先锋</p>
         </footer>
     </div>
 </body>
